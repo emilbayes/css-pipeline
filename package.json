@@ -1,0 +1,33 @@
+{
+  "name": "@emilbayes/css-pipeline",
+  "description": "My personal PostCSS based CSS pipeline",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "cssnano": "^3.7.4",
+    "defined": "^1.0.0",
+    "postcss": "^5.2.5",
+    "postcss-browser-reporter": "^0.5.0",
+    "postcss-cssnext": "^2.7.0",
+    "postcss-import": "^8.1.2",
+    "rtlcss": "^2.0.6"
+  },
+  "devDependencies": {
+    "postcss-cli": "^2.6.0"
+  },
+  "scripts": {
+    "test": "npm run script-test && npm run cli-test && echo ''",
+    "script-test": "node example.js",
+    "pre-cli-test": "npm link && npm link @emilbayes/css-pipeline",
+    "cli-test": "npm run pre-cli-test && cat index.css | postcss --use @emilbayes/css-pipeline"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/emilbayes/css-pipeline.git"
+  },
+  "author": "Emil Bay <github@tixz.dk>",
+  "bugs": {
+    "url": "https://github.com/emilbayes/css-pipeline/issues"
+  },
+  "homepage": "https://github.com/emilbayes/css-pipeline#readme"
+}
