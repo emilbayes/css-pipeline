@@ -14,6 +14,7 @@ module.exports = postcss.plugin('@emilbayes/css-pipeline', function (options) {
 
   return postcss([
     require('postcss-import')(),
+    require('postcss-url')({url: 'rebase'}),
     require('postcss-cssnext')(),
     rtl ? require('rtlcss')() : noop(),
     !debug ? require('cssnano')({ autoprefixer: false }) : noop(),
