@@ -18,6 +18,6 @@ module.exports = postcss.plugin('@emilbayes/css-pipeline', function (options) {
     rtl ? require('rtlcss')() : noop(),
     require('postcss-cssnext')(),
     !debug ? require('cssnano')({ autoprefixer: false }) : noop(),
-    !debug ? require('postcss-browser-reporter')() : noop()
+    debug ? require('postcss-browser-reporter')() : noop()
   ])
 })
