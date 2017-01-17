@@ -1,0 +1,13 @@
+notifications:
+  email: false
+
+language: node_js
+node_js:
+  - 'node'
+
+deploy:
+  provider: npm
+  api_key:
+    secure: "WxHv0XZupwzp5qTmKUzEtVKVRvVR7PMi8OcVd3IlyZ1k+l9ml5AvPpQWVgrUAUEtS+s9TXsW//E40ejzX/KACYPs1qo1NxZ39Nmei7v6SuIQmkTUI84O9v/NNC/iH1KiQmVMKpkNG/g7O1/3/E7Is8tVd5Tpvlvssm3SrHGBODA3josRTK40w3+IJJQYXoybGcLQC0OckYWDxocXX/VKzz62suaG0wEsmzXZZ5Mm+csmEyqekuFnZoTrnv6lJXA4YW0k36oPeQG+VVzR0UiFIHdxShzNJFDo6NdgusoEsTMsGMf2Xjaq66trITkCaWYyoaLBGgumEtRtIfiq5f5jjNoGR74S40JET8H6QiT7ED8yKcqVuFLvKzmstPujWFKACMR7vmPkaYI3To21yEAAYmdoLFMFtdbxeRGWy9Tq7hqeXo6gRA1PvG/OhKhjrm6eG3SM54FdixZ2aPdZtDWwS2yP1xSa+SIqJaNN7oQfhBKDk6fsKfNbvGA3L8KAwLEChigC9SIyPJAOC0zXlb/79SaANe2vBn50svnAL7oUMTAft8oNBUb7B21sPqjJRDX3kmZgB/YS8o4gD3lTQkpGcV7Hs66tqOMOtjBxjtEJVn9OzrRCY1ELSnmdW9J2ftEu0AVhxZWW/rL6elvuLNlNv99Oz3R4joTtFubdkKYCfRc="
+  on:
+    tags: true
