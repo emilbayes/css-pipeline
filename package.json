@@ -1,7 +1,7 @@
 {
   "name": "@emilbayes/css-pipeline",
   "description": "My personal PostCSS based CSS pipeline",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "main": "index.js",
   "dependencies": {
     "cssnano": "^3.10.0",
