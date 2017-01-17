@@ -13,7 +13,11 @@ module.exports = postcss.plugin('@emilbayes/css-pipeline', function (options) {
   var debug = defined(options.debug, process.env.DEBUG, false)
 
   return postcss([
-    require('postcss-import')(),
+    require('postcss-import')({
+      plugins: [
+        debug ? require('stylelint')(require('stylelint-config-standard')) : noop()
+      ]
+    }),
     require('postcss-url')({url: 'rebase'}),
     rtl ? require('rtlcss')() : noop(),
     require('postcss-cssnext')(),
