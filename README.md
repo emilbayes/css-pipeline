@@ -1,5 +1,7 @@
 # `@emilbayes/css-pipeline`
 
+[![Build Status](https://travis-ci.org/emilbayes/css-pipeline.svg?branch=master)](https://travis-ci.org/emilbayes/css-pipeline)
+
 > My personal PostCSS based CSS pipeline
 
 ## Usage
