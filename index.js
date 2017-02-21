@@ -9,8 +9,8 @@ var noop = postcss.plugin('noop', function () {
 
 module.exports = postcss.plugin('@emilbayes/css-pipeline', function (options) {
   options = options || {}
-  var rtl = defined(options.rtl, process.env.RTL, false)
-  var debug = defined(options.debug, process.env.DEBUG, false)
+  var rtl = defined(options.rtl, process.env.RTL == true, false)
+  var debug = defined(options.debug, process.env.DEBUG == true, false)
 
   return postcss([
     require('postcss-import')({
