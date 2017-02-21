@@ -12,7 +12,7 @@ module.exports = postcss.plugin('@emilbayes/css-pipeline', function (options) {
   var rtl = defined(options.rtl, process.env.RTL == true, false)
   var debug = defined(options.debug, process.env.DEBUG == true, false)
 
-  return postcss([
+  return Object.assign(postcss([
     require('postcss-import')({
       plugins: [
         debug === true ? require('stylelint')(require('stylelint-config-standard')) : noop()
@@ -23,5 +23,5 @@ module.exports = postcss.plugin('@emilbayes/css-pipeline', function (options) {
     require('postcss-cssnext')(),
     debug === false ? require('cssnano')({ autoprefixer: false }) : noop(),
     debug === true ? require('postcss-browser-reporter')() : noop()
-  ])
+  ]), {debug: debug, rtl: rtl})
 })
