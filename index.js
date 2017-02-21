@@ -15,13 +15,13 @@ module.exports = postcss.plugin('@emilbayes/css-pipeline', function (options) {
   return postcss([
     require('postcss-import')({
       plugins: [
-        debug ? require('stylelint')(require('stylelint-config-standard')) : noop()
+        debug === true ? require('stylelint')(require('stylelint-config-standard')) : noop()
       ]
     }),
     require('postcss-url')({url: 'rebase'}),
-    rtl ? require('rtlcss')() : noop(),
+    rtl === true ? require('rtlcss')() : noop(),
     require('postcss-cssnext')(),
-    !debug ? require('cssnano')({ autoprefixer: false }) : noop(),
-    debug ? require('postcss-browser-reporter')() : noop()
+    debug === false ? require('cssnano')({ autoprefixer: false }) : noop(),
+    debug === true ? require('postcss-browser-reporter')() : noop()
   ])
 })
